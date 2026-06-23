@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interrogation Log — Detective Desk archive. Recorded statements from persons of interest." />
+  <title>Interrogation Log — Detective Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    /* ── Suspect Statement Cards ── */
+    .suspect-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin: 1.2rem 0 0.4rem;
+    }
+    .suspect-card {
+      background: linear-gradient(145deg, #1a1409, #120e06);
+      border: 1px solid rgba(201,150,59,0.2);
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.4rem 1rem;
+    }
+    .suspect-card-name {
+      font-family: var(--font-title);
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .suspect-tag {
+      font-size: 0.62rem;
+      color: var(--smoke);
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(201,150,59,0.2);
+      border-radius: 2px;
+      padding: 0.1rem 0.45rem;
+      font-family: var(--font-title);
+    }
+    .suspect-statement {
+      font-style: italic;
+      color: var(--parchment-dim);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .suspect-statement .highlight-word {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* ── Protocol box ── */
+    .protocol-signal-block {
+      margin: 0.8rem 0;
+      padding: 0.8rem 1.2rem;
+      background: rgba(201,150,59,0.03);
+      border: 1px solid rgba(201,150,59,0.15);
+      border-radius: var(--radius-sm);
+    }
+    .proto-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(201,150,59,0.07);
+      font-size: 1.2rem;
+      color: var(--parchment-dim);
+    }
+    .proto-row:last-child { border-bottom: none; }
+
+    /* ── Rules list ── */
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+    }
+    .rules-list li {
+      color: var(--parchment-dim);
+      font-size: 0.92rem;
+      padding: 0.3rem 0 0.3rem 1.1rem;
+      border-bottom: 1px solid rgba(201,150,59,0.06);
+      position: relative;
+      line-height: 1.65;
+    }
+    .rules-list li::before {
+      content: '§';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-family: var(--font-title);
+      font-size: 0.72rem;
+    }
+    .rules-list li:last-child { border-bottom: none; }
+
+    /* ── Section ornament ── */
+    .section-ornament {
+      font-family: var(--font-title);
+      color: var(--gold-dim);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0.6rem 0;
+      opacity: 0.55;
+    }
+
+    .directive-fragment-text {
+      font-style: italic;
+      color: var(--parchment-dim);
+      line-height: 1.8;
+    }
+
+    .directive-fragment-note {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: var(--parchment-dim);
+      line-height: 1.7;
+    }
+
+    /* ── Transcript header bar ── */
+    .transcript-header {
+      font-family: var(--font-title);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      color: var(--smoke);
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(201,150,59,0.15);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .transcript-status {
+      color: var(--gold-dim);
+      font-size: 0.62rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo" aria-label="Return to the Archive Hub">
+        <span class="logo-rune">⚔</span>
+        <span class="logo-text">RE:VERSE</span>
+        <span class="logo-rune">⚔</span>
+      </a>
+      <p class="header-tagline">The Sealed Chronicles</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Archive Navigation">
+    <a href="../index.html" id="nav-hub">Hub</a> / <span>Interrogation Log</span>
+  </nav>
+
+  <main class="main-content">
+
+    <article class="scroll-page" aria-labelledby="page-title">
+
+      <header class="scroll-header">
+        <div class="scroll-icon" aria-hidden="true">🗣️</div>
+        <h1 id="page-title">Interrogation Log</h1>
+        <p class="scroll-meta">&#91; Case #VT-0417 — Recorded Statements, Persons of Interest &#93;</p>
+      </header>
+
+      <div class="scroll-body">
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 1 — FILING NOTICE
+             ═══════════════════════════════════════════ -->
+
+        <div class="entry">
+          <h2 class="entry-date">Statement Session — Friday Night, Twilight Cove</h2>
+          <p>
+            The following transcripts were recorded in the hours following the discovery of the body.
+            All four persons of interest were questioned separately. Statements have been reproduced verbatim
+            from audio logs and certified by the presiding officer.
+          </p>
+
+          <div class="protocol-signal-block">
+            <div class="proto-row">
+              <span style="font-family:var(--font-title);font-size:0.75rem;letter-spacing:0.1em;color:var(--smoke);min-width:120px;">CASE FILE</span>
+              <span style="font-size:0.9rem;">#VT-0417 — Arjun Varma (Deceased)</span>
+            </div>
+            <div class="proto-row">
+              <span style="font-family:var(--font-title);font-size:0.75rem;letter-spacing:0.1em;color:var(--smoke);min-width:120px;">SESSION TIME</span>
+              <span style="font-size:0.9rem;">Saturday, 02:15 AM onward</span>
+            </div>
+            <div class="proto-row">
+              <span style="font-family:var(--font-title);font-size:0.75rem;letter-spacing:0.1em;color:var(--smoke);min-width:120px;">SUBJECTS</span>
+              <span style="font-size:0.9rem;">4 persons — see transcripts below</span>
+            </div>
+          </div>
+
+          <ul class="rules-list">
+            <li>Each statement was given without prior knowledge of other subjects' accounts.</li>
+            <li>No legal representation was present at this stage; all participation was voluntary.</li>
+            <li>Statements have not been edited for tone or grammar — only transcribed as spoken.</li>
+          </ul>
+        </div>
+
+        <div class="section-ornament" aria-hidden="true">✦ ───────────────────────── ✦ ───────────────────────── ✦</div>
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 2 — INDIVIDUAL TRANSCRIPTS
+             ═══════════════════════════════════════════ -->
+
+        <div class="entry">
+          <h2 class="entry-date">Recorded Statements — Verbatim Transcripts</h2>
+          <p>
+            Read each account carefully. One person among the four was not at Twilight Cove that night.
+            One person was. The record will tell you which is which — if you know what time to look for.
+          </p>
+
+          <div class="suspect-grid">
+
+            <!-- Rohan Mehta -->
+            <div class="suspect-card">
+              <div class="suspect-card-name">
+                Rohan Mehta
+                <span class="suspect-tag">SUBJECT 01</span>
+              </div>
+              <div class="transcript-header">
+                <span>Statement Begins</span>
+                <span class="transcript-status">▶ AUDIO VERIFIED</span>
+              </div>
+              <p class="suspect-statement">
+                "I was driving past, that's it. I didn't even go in. I posted the story because I was annoyed
+                I wasn't invited to Vision Night after everything I'd put into this company. I deleted it
+                because it looked bad, not because it <em>was</em> bad. I didn't kill him."
+              </p>
+            </div>
+
+            <!-- Ishita Rao -->
+            <div class="suspect-card">
+              <div class="suspect-card-name">
+                Ishita Rao
+                <span class="suspect-tag">SUBJECT 02</span>
+              </div>
+              <div class="transcript-header">
+                <span>Statement Begins</span>
+                <span class="transcript-status">▶ AUDIO VERIFIED</span>
+              </div>
+              <p class="suspect-statement">
+                "We ended things eight months ago. I wasn't there that night. I don't know why everyone
+                keeps bringing up the engagement — it has nothing to do with this. I have nothing to hide."
+              </p>
+            </div>
+
+            <!-- Devika Singh -->
+            <div class="suspect-card">
+              <div class="suspect-card-name">
+                Devika Singh
+                <span class="suspect-tag">SUBJECT 03</span>
+              </div>
+              <div class="transcript-header">
+                <span>Statement Begins</span>
+                <span class="transcript-status">▶ AUDIO VERIFIED</span>
+              </div>
+              <p class="suspect-statement">
+                "I left at 10:15. I had the whole evening planned — vendors, seating, the press list. I have
+                texts, timestamps, everything. Ask anyone."
+              </p>
+              <p class="suspect-statement" style="margin-top:0.9rem;border-top:1px solid rgba(201,150,59,0.1);padding-top:0.9rem;">
+                "Honestly? The only person who had a right to be angry was whoever got
+                <span class="highlight-word">erased</span> from the company's own story. But that's old news.
+                That's not tonight's problem."
+              </p>
+            </div>
+
+            <!-- Meera Kapoor -->
+            <div class="suspect-card">
+              <div class="suspect-card-name">
+                Meera Kapoor
+                <span class="suspect-tag">SUBJECT 04</span>
+              </div>
+              <div class="transcript-header">
+                <span>Statement Begins</span>
+                <span class="transcript-status">▶ AUDIO VERIFIED</span>
+              </div>
+              <p class="suspect-statement">
+                "Arjun and I built this company together. People forget that. I was on a call with our
+                hardware vendor until almost eleven — you can check the call log. I have no reason to hurt
+                him. Whatever happens to Project Solace, happens. I just want to know what really happened
+                to him."
+              </p>
+            </div>
+
+          </div><!-- /suspect-grid -->
+        </div>
+
+        <div class="section-ornament" aria-hidden="true">✦ ───────────────────────── ✦ ───────────────────────── ✦</div>
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 3 — ANALYST NOTE
+             ═══════════════════════════════════════════ -->
+
+        <div class="entry">
+          <h2 class="entry-date">Presiding Officer's Note — Filed Post-Session</h2>
+          <p style="font-style:italic;color:var(--parchment-dim);font-size:1.3rem;line-height:1.85;">
+            Three subjects read defensive. One read composed. Only one alibi is time-stamped — and
+            the timestamp only covers the <strong>official</strong> window. Cross-reference against
+            Log 1 before drawing conclusions.
+          </p>
+        </div>
+
+        <div class="section-ornament" aria-hidden="true">✦ ───────────────────────── ✦ ───────────────────────── ✦</div>
+
+        <!-- ═══════════════════════════════════════════
+             CODE PANEL
+             ═══════════════════════════════════════════ -->
+
+        <div class="record-code-panel" data-record-key="alliance">
+          <h2 class="record-code-title">Interrogation Log Code</h2>
+          <p class="record-code-note">Enter the code extracted from these transcripts. The next log unlocks only after this code is verified.</p>
+
+          <div class="puzzle-clue" style="margin: 1.5rem 0; padding: 1.5rem; text-align: center; border: 1px solid rgba(201, 150, 59, 0.4); background: rgba(0, 0, 0, 0.4); border-radius: 6px; box-shadow: inset 0 0 10px rgba(201, 150, 59, 0.05);">
+            <p style="color: var(--parchment); font-family: var(--font-body); font-style: italic; font-size: 1.1rem; line-height: 1.8; margin-bottom: 0;">
+              One word surfaces only once across all four statements.<br />
+              It names no person directly — yet it names everything.
+              <strong style="color: var(--parchment); font-family: var(--font-title); font-size: 1.1rem; letter-spacing: 0.1em; font-style: normal; display: block; margin-top: 0.5rem;">
+                What was done to the other half of this company?
+              </strong>
+            </p>
+          </div>
+
+          <form class="record-code-form" autocomplete="off">
+            <label for="record-code-alliance" class="record-code-label">Interrogation code</label>
+            <div class="record-code-row">
+              <input type="text" id="record-code-alliance" class="record-code-input" inputmode="text" maxlength="6" aria-describedby="record-code-alliance-feedback" />
+              <button type="submit" class="btn-action-primary record-code-submit">Verify</button>
+            </div>
+            <p class="record-code-feedback" id="record-code-alliance-feedback" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </div><!-- /scroll-body -->
+
+      <nav class="scroll-nav" aria-label="Page navigation">
+        <a href="../HealerRecords/healer-records.html" class="btn-nav" id="btn-back-healer">← Healer Records</a>
+        <a href="../HerosMemoir/HerosMemoir.html" class="btn-nav btn-next" id="btn-next-hidden">Hero's Memoir →</a>
+      </nav>
+
+    </article>
+
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

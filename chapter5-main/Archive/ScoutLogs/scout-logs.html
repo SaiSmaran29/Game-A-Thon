@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Forensic Report — Detective Desk. Case File #VT-0417 Post-Mortem Examination." />
+  <title>Forensic Report — Detective Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+
+  <!-- Ambient particles -->
+  <div class="particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Top banner -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo" aria-label="Return to the Archive Hub">
+        <span class="logo-rune">🔍</span>
+        <span class="logo-text">DETECTIVE DESK</span>
+        <span class="logo-rune">🔍</span>
+      </a>
+      <p class="header-tagline">The Midnight Murder</p>
+    </div>
+  </header>
+
+  <!-- Breadcrumb nav -->
+  <nav class="breadcrumb" aria-label="Archive Navigation">
+    <a href="../index.html" id="nav-hub">Hub</a> / <span>Forensic Report</span>
+  </nav>
+
+  <!-- Page content -->
+  <main class="main-content">
+
+    <article class="scroll-page" aria-labelledby="page-title">
+
+      <header class="scroll-header">
+        <div class="scroll-icon" aria-hidden="true">🔬</div>
+        <h1 id="page-title">Forensic Report</h1>
+        <p class="scroll-meta">&#91; Case File #VT-0417 — Post-Mortem Examination &#93;</p>
+      </header>
+
+      <div class="scroll-body">
+
+        <style>
+          .scout-log-card {
+            position: relative;
+            background-color: #d1bfae;
+            background-image:
+              url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>'),
+              radial-gradient(ellipse at center, rgba(230, 210, 180, 0.2) 0%, rgba(120, 90, 50, 0.6) 100%),
+              linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+            border: none;
+            box-shadow:
+              inset 0 0 40px rgba(70, 40, 15, 0.8),
+              inset 0 0 10px rgba(50, 25, 5, 0.6),
+              0 10px 20px rgba(0, 0, 0, 0.6);
+            border-radius: 3px;
+            padding: 2.2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            color: #2c1e16;
+            overflow: hidden;
+            font-family: var(--font-body);
+            text-shadow: none;
+          }
+
+          .scout-log-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow:
+              inset 0 0 20px 8px rgba(60, 30, 10, 0.4),
+              inset 0 0 60px rgba(30, 15, 0, 0.3);
+            pointer-events: none;
+            border-radius: 3px;
+            mix-blend-mode: multiply;
+            z-index: 10;
+          }
+
+          .scout-log-card h2.entry-date {
+            font-family: var(--font-body);
+            font-weight: bold;
+            color: #1a110a;
+            text-shadow: none;
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.02em;
+          }
+
+          .scout-log-card > p:nth-of-type(1) {
+            text-align: center;
+            font-size: 1rem;
+            color: #3b2a1c;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid rgba(80, 50, 20, 0.2);
+            padding-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+          }
+
+          .scout-log-card p {
+            position: relative;
+            padding-left: 2.2rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(80, 50, 20, 0.15);
+            line-height: 1.7;
+            z-index: 2;
+            color: #2c1e16;
+            text-shadow: none;
+          }
+
+          .scout-log-card p:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+
+          .scout-log-card p strong {
+            font-family: var(--font-body);
+            font-weight: bold;
+            color: #1a110a;
+            display: inline-block;
+            margin-bottom: 0.25rem;
+            letter-spacing: 0;
+            font-size: 1.05rem;
+            text-shadow: none;
+          }
+
+          .scout-log-card p::before {
+            position: absolute;
+            left: 0.2rem;
+            top: 0.2rem;
+            font-size: 1.1rem;
+            color: rgba(60, 40, 20, 0.7);
+            text-shadow: none;
+            font-family: 'Segoe UI Symbol', serif;
+          }
+
+          .scout-log-card p:nth-of-type(2)::before { content: '⚑'; font-size: 1.2rem; top: 0.15rem; }
+          .scout-log-card p:nth-of-type(3)::before { content: '◈'; font-size: 1.3rem; left: 0.1rem; }
+          .scout-log-card p:nth-of-type(4)::before { content: '⚔'; font-size: 1.2rem; top: 0.15rem; }
+          .scout-log-card p:nth-of-type(5)::before { content: '↶'; font-size: 1.4rem; top: 0rem; }
+          .scout-log-card p:nth-of-type(6)::before { content: '✎'; font-size: 1.3rem; top: 0rem; left: 0.1rem; }
+
+          .handwritten-note {
+            font-family: 'IM Fell English', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #1a110a !important;
+            line-height: 1.9;
+            border-top: 1px dashed rgba(80,50,20,0.3) !important;
+            margin-top: 0.5rem !important;
+            padding-top: 1rem !important;
+          }
+
+          .stamp-official {
+            display: inline-block;
+            border: 2px solid rgba(120,40,20,0.6);
+            color: rgba(120,40,20,0.8);
+            font-family: var(--font-body);
+            font-weight: bold;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.7rem;
+            border-radius: 2px;
+            transform: rotate(-2deg);
+            display: block;
+            width: fit-content;
+            margin: 0.5rem auto 0;
+            text-shadow: none;
+          }
+        </style>
+
+        <!-- ENTRY I — Official Header -->
+        <div class="entry scout-log-card">
+          <h2 class="entry-date">Entry I — Case Identification</h2>
+          <p><strong>CASE FILE #VT-0417</strong></p>
+          <p><strong>Subject:</strong> Arjun Varma, Male, 34</p>
+          <p><strong>Location of Recovery:</strong> Twilight Cove, Private Lake Residence</p>
+          <p><strong>Time of Death (Official):</strong> 10:40 PM, Friday</p>
+          <p><strong>Examining Officer:</strong> Dr. K. Subramaniam, Forensic Division</p>
+          <span class="stamp-official">Certified — City Forensic Division</span>
+        </div>
+
+        <!-- ENTRY II — Cause of Death -->
+        <div class="entry scout-log-card">
+          <h2 class="entry-date">Entry II — Cause of Death</h2>
+          <p><strong>Manner of Death:</strong> Homicide</p>
+          <p><strong>Cause:</strong><br />
+            Blunt force trauma to the cranial region<br />
+            Single impact — consistent with a compact, weighted object
+          </p>
+          <p><strong>Recovery Object:</strong><br />
+            A damaged crystal object was recovered from the scene<br />
+            Believed to be the instrument of death — submitted for evidence tagging
+          </p>
+          <p><strong>Body Recovered:</strong> 11:58 PM — reported by Mr. Rohan Mehta, civilian, on-site</p>
+          <p><strong>Filed By:</strong> Dr. K. Subramaniam</p>
+        </div>
+
+        <!-- ENTRY III — Handwritten Field Notes (the clue) -->
+        <div class="entry clue-entry scout-log-card">
+          <h2 class="entry-date">Entry III — Examiner's Field Notes</h2>
+          <p><strong>Handwritten Addendum — Lower Margin of Report</strong></p>
+          <p>The following notes were found written in the examining officer's hand at the bottom of the official typed
+            report. They do not appear in the digitised copy submitted to dispatch.</p>
+
+          <button type="button" class="btn-action-primary"
+            onclick="document.getElementById('field-notes').classList.toggle('hidden'); if(this.innerText.includes('Reveal')) { this.innerText = 'Hide Field Notes ▲'; } else { this.innerText = 'Reveal Field Notes ▼'; }"
+            style="display: block; margin: 0.5rem auto 1.5rem auto; background-color: #2c1e16 !important; color: #d1bfae !important; border: 1px solid #1a110a !important; text-shadow: none !important; box-shadow: inset 0 0 5px rgba(0,0,0,0.8) !important;">Reveal
+            Field Notes ▼</button>
+
+          <div id="field-notes" class="hidden"
+            style="display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 1rem; margin-bottom: 1.5rem;">
+
+            <div class="archive-card"
+              style="padding: 1rem; flex-direction: column; justify-content: flex-start; flex: 1 1 200px; max-width: 260px; min-height: 200px;">
+              <div class="card-label" style="text-align: center;">[Note A]</div>
+              <div style="text-align: center; color: var(--gold-bright); font-size: 0.9rem; font-family: var(--font-title); margin-top: 0.3rem; letter-spacing: 0.05em;">Body Temperature</div>
+              <div class="card-desc" style="margin-top: 0.6rem; color: var(--parchment); text-align: center; font-style: italic;">
+                33.4°C recorded at examination<br />(12:10 AM)
+              </div>
+            </div>
+
+            <div class="archive-card"
+              style="padding: 1rem; flex-direction: column; justify-content: flex-start; flex: 1 1 200px; max-width: 260px; min-height: 200px;">
+              <div class="card-label" style="text-align: center;">[Note B]</div>
+              <div style="text-align: center; color: var(--gold-bright); font-size: 0.9rem; font-family: var(--font-title); margin-top: 0.3rem; letter-spacing: 0.05em;">Lividity</div>
+              <div class="card-desc" style="margin-top: 0.6rem; color: var(--parchment); text-align: center; font-style: italic;">
+                Minimal — not yet fixed at time of examination
+              </div>
+            </div>
+
+            <div class="archive-card"
+              style="padding: 1rem; flex-direction: column; justify-content: flex-start; flex: 1 1 200px; max-width: 260px; min-height: 200px;">
+              <div class="card-label" style="text-align: center;">[Note C]</div>
+              <div style="text-align: center; color: var(--gold-bright); font-size: 0.9rem; font-family: var(--font-title); margin-top: 0.3rem; letter-spacing: 0.05em;">Rigor Mortis</div>
+              <div class="card-desc" style="margin-top: 0.6rem; color: var(--parchment); text-align: center; font-style: italic;">
+                Early onset only<br />Jaw and neck — consistent with 60–90 min post-death
+              </div>
+            </div>
+
+            <div class="archive-card"
+              style="padding: 1rem; flex-direction: column; justify-content: flex-start; flex: 1 1 200px; max-width: 260px; min-height: 200px;">
+              <div class="card-label" style="text-align: center;">[Note D]</div>
+              <div style="text-align: center; color: var(--gold-bright); font-size: 0.9rem; font-family: var(--font-title); margin-top: 0.3rem; letter-spacing: 0.05em;">Examiner's Remark</div>
+              <div class="card-desc" style="margin-top: 0.6rem; color: var(--parchment); text-align: center; font-style: italic;">
+                "Findings consistent with death approx. 60–90 minutes prior to examination — cross-check against stated TOD."
+              </div>
+              <button type="button" class="btn-action-primary"
+                onclick="document.getElementById('note-d-detail').classList.remove('hidden');"
+                style="margin-top: auto; padding: 0.4rem 0.8rem; font-size: 0.75rem; background-color: #2c1e16 !important; color: #d1bfae !important; border: 1px solid #1a110a !important; text-shadow: none !important; box-shadow: inset 0 0 5px rgba(0,0,0,0.8) !important;">Cross-Reference →</button>
+            </div>
+
+          </div>
+
+          <!-- Modal: cross-reference breakdown -->
+          <div id="note-d-detail" class="hidden"
+            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+            <div class="scroll-quote"
+              style="position: relative; background: var(--bg-card); border: 1px solid rgba(201,150,59,0.35); padding: 2rem 2.5rem; max-width: 460px; width: 90%; box-shadow: 0 0 40px rgba(0,0,0,0.9); margin: 0; border-left: none; border-radius: var(--radius-md);">
+              <button onclick="document.getElementById('note-d-detail').classList.add('hidden')"
+                style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: var(--gold-dim); font-size: 1.5rem; cursor: pointer; transition: color 0.2s;"
+                onmouseover="this.style.color='var(--gold-bright)'"
+                onmouseout="this.style.color='var(--gold-dim)'">&times;</button>
+              <h3 style="font-size: 1.1rem; color: var(--gold-bright); font-family: var(--font-title); margin-bottom: 1rem; letter-spacing: 0.1em;">CROSS-REFERENCE — TOD CALCULATION</h3>
+              <p style="color: var(--parchment);">
+                Examination conducted: <strong style="color: var(--gold-bright);">12:10 AM</strong><br />
+                Physical findings: death 60–90 min prior<br />
+                → Places real TOD between <strong style="color: var(--gold-bright);">10:40 PM – 11:10 PM</strong>
+              </p>
+              <p style="margin-top: 1.2rem; border-top: 1px dotted var(--gold-dim); padding-top: 1.2rem; color: var(--parchment-dim);">
+                <strong>Note:</strong><br />
+                The dispatch log records Rohan Mehta's call at <strong style="color: var(--gold-bright);">11:50 PM</strong> — placed almost immediately after he found the body.<br /><br />
+                If the body was found at 11:50 PM, and the examiner's own physical data places death 60–90 minutes before 12:10 AM — the only time that satisfies <em>both</em> constraints is <strong style="color: var(--gold-bright);">11:40 PM</strong>.<br /><br />
+                The official typed record reads <strong style="color: rgba(192,57,43,0.9);">10:40 PM</strong>.<br />
+                Something was changed after the notes were taken.
+              </p>
+            </div>
+          </div>
+
+          <hr style="border: none; border-top: 1px dashed rgba(201,150,59,0.15); margin: 1.5rem 0;" />
+          <p style="margin-top: 0rem;"><strong>Filed By:</strong> Dr. K. Subramaniam — handwritten margin, unsigned</p>
+        </div>
+
+        <!-- ENTRY IV — Dispatch Log -->
+        <div class="entry clue-entry scout-log-card">
+          <h2 class="entry-date">Entry IV — Dispatch Log</h2>
+          <p><strong>Attached to Case File #VT-0417</strong></p>
+          <p><strong>Dispatch Timeline:</strong></p>
+
+          <style>
+            .map-component {
+              transition: filter 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+              cursor: default;
+            }
+            .map-component:hover {
+              filter: brightness(1.2) drop-shadow(0 0 10px rgba(201, 150, 59, 0.6));
+              border-color: var(--gold) !important;
+              background: rgba(40, 30, 15, 0.8) !important;
+            }
+            .evidence-component {
+              transition: filter 0.25s ease, border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+              cursor: default;
+            }
+            .evidence-component:hover {
+              filter: brightness(1.2) drop-shadow(0 0 10px rgba(192, 57, 43, 0.6));
+              border-color: var(--crimson-light) !important;
+              border-left: 2px solid var(--crimson-light) !important;
+              background: rgba(40, 15, 15, 0.8) !important;
+              transform: scale(1.02);
+            }
+          </style>
+
+          <div style="position: relative; width: 100%; max-width: 600px; height: 350px; margin: 1.5rem auto; background: radial-gradient(ellipse 55% 55% at 50% 50%, rgba(201,150,59,0.05) 0%, transparent 70%), linear-gradient(160deg, #131009 0%, #0e0c07 100%); border: 1px solid rgba(201,150,59,0.16); border-radius: 6px; font-family: var(--font-title); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--gold-bright);">
+
+            <div class="map-component" style="position: absolute; top: 12%; left: 50%; transform: translate(-50%, -50%); padding: 0.5rem 1rem; border: 1px solid rgba(201,150,59,0.3); background: rgba(0,0,0,0.5); border-radius: var(--radius-sm); z-index: 10; white-space: nowrap;">
+              11:50 PM — Incoming Call
+            </div>
+
+            <div class="map-component" style="position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%); padding: 0.5rem 1.2rem; border: 1px solid rgba(201,150,59,0.3); background: rgba(0,0,0,0.5); border-radius: var(--radius-sm); z-index: 10; font-size: 1rem; color: var(--parchment); white-space: nowrap;">
+              DISPATCH LOG
+            </div>
+
+            <div class="map-component" style="position: absolute; top: 62%; left: 50%; transform: translate(-50%, -50%); padding: 0.5rem 1rem; border: 1px solid rgba(201,150,59,0.3); background: rgba(0,0,0,0.5); border-radius: var(--radius-sm); z-index: 10; white-space: nowrap;">
+              11:52 PM — Patrol Dispatched
+            </div>
+
+            <div class="map-component" style="position: absolute; top: 86%; left: 50%; transform: translate(-50%, -50%); padding: 0.5rem 1rem; border: 1px solid rgba(201,150,59,0.3); background: rgba(0,0,0,0.5); border-radius: var(--radius-sm); z-index: 10; white-space: nowrap;">
+              11:58 PM — Officers On Scene
+            </div>
+
+            <div class="evidence-component" style="position: absolute; top: 10%; right: 4%; max-width: 210px; padding: 0.5rem 0.6rem; border: 1px dashed rgba(192,57,43,0.5); background: rgba(0,0,0,0.6); border-left: 2px solid rgba(192,57,43,0.8); border-radius: var(--radius-sm); z-index: 10; font-family: var(--font-body); font-size: 0.7rem; color: var(--parchment-dim); line-height: 1.4; text-transform: none; letter-spacing: 0; transform-origin: top right;">
+              <strong style="color: var(--crimson-light); font-family: var(--font-title); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; line-height: 1.2; margin-bottom: 0.2rem; white-space: nowrap;">[EVIDENCE MARKER]</strong>
+              Rohan Mehta — civilian<br />
+              Only named person on record<br />
+              Called in at 11:50 PM
+            </div>
+
+            <div class="evidence-component" style="position: absolute; bottom: 8%; left: 4%; max-width: 210px; padding: 0.5rem 0.6rem; border: 1px dashed rgba(192,57,43,0.5); background: rgba(0,0,0,0.6); border-left: 2px solid rgba(192,57,43,0.8); border-radius: var(--radius-sm); z-index: 10; font-family: var(--font-body); font-size: 0.7rem; color: var(--parchment-dim); line-height: 1.4; text-transform: none; letter-spacing: 0;">
+              <strong style="color: var(--crimson-light); font-family: var(--font-title); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; line-height: 1.2; margin-bottom: 0.2rem;">[DISCREPANCY]</strong>
+              Official TOD typed: <span style="color: rgba(192,57,43,0.9); font-weight: bold;">10:40 PM</span><br />
+              Field data calculates: <span style="color: var(--gold-bright); font-weight: bold;">11:40 PM</span>
+            </div>
+
+            <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" aria-hidden="true">
+              <line x1="50%" y1="12%" x2="50%" y2="30%" stroke="rgba(201,150,59,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
+              <line x1="50%" y1="46%" x2="50%" y2="54%" stroke="rgba(201,150,59,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
+              <line x1="50%" y1="70%" x2="50%" y2="78%" stroke="rgba(201,150,59,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
+            </svg>
+          </div>
+
+          <p><strong>Caller Statement — R. Mehta, 11:50 PM:</strong><br />
+            <em>"Something's wrong — I think he's dead."</em><br />
+            Call duration: 38 seconds. Caller remained on site until officers arrived.
+          </p>
+          <p><strong>Filed By:</strong> City Dispatch — Case #VT-0417</p>
+        </div>
+
+      </div>
+
+      <!-- CODE PANEL -->
+      <div class="record-code-panel" data-record-key="forensic">
+        <h2 class="record-code-title">Forensic Report Code</h2>
+        <p class="record-code-note">Enter the code extracted from this report. The next log unlocks only after this code
+          is verified.</p>
+
+        <div class="puzzle-clue"
+          style="margin: 1.5rem 0; padding: 1.5rem; text-align: center; border: 1px solid rgba(201, 150, 59, 0.4); background: rgba(0, 0, 0, 0.4); border-radius: 6px; box-shadow: inset 0 0 10px rgba(201, 150, 59, 0.05);">
+          <p
+            style="color: var(--parchment); font-family: var(--font-body); font-style: italic; font-size: 1.1rem; line-height: 1.8; margin-bottom: 0;">
+            The typed record says one thing.<br />
+            The examiner's own hand says another.<br /><br />
+            <strong
+              style="color: var(--parchment); font-family: var(--font-title); font-size: 1.1rem; letter-spacing: 0.1em; font-style: normal; display: block; margin-top: 0.5rem;">When
+              did he actually die?</strong>
+          </p>
+        </div>
+
+        <form class="record-code-form" autocomplete="off">
+          <label for="record-code-forensic" class="record-code-label">Forensic code</label>
+          <div class="record-code-row">
+            <input type="text" id="record-code-forensic" class="record-code-input" inputmode="text"
+              aria-describedby="record-code-forensic-feedback" />
+            <button type="submit" class="btn-action-primary record-code-submit">Verify</button>
+          </div>
+          <p class="record-code-feedback" id="record-code-forensic-feedback" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <nav class="scroll-nav" aria-label="Page navigation">
+        <a href="../index.html" class="btn-nav" id="btn-back-hub-forensic">← Return to Hub</a>
+        <a href="../HealerRecords/healer-records.html" class="btn-nav btn-next" id="btn-next-healer">Healer Records →</a>
+      </nav>
+
+    </article>
+
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

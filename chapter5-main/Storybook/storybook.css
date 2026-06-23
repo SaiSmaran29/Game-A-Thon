@@ -1,0 +1,319 @@
+/* Cinematic Storybook Style — Chapter 5 */
+
+/* Base & Typography Overrides */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0c10;
+  color: var(--parchment-text, #c4b5a2);
+  font-family: 'IM Fell English', serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Background Controller */
+.cinematic-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #0b0c10;
+  transition: all 1.5s ease-in-out;
+  overflow: hidden;
+}
+
+/* Atmospheric Fog */
+.fog-layer {
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at center, rgba(30, 32, 40, 0.5), transparent 60%);
+  opacity: 0.6;
+}
+.haze-1 { animation: drift 60s linear infinite alternate; }
+.haze-2 { animation: drift 45s linear infinite alternate-reverse; }
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-5%, -5%) scale(1.1); }
+}
+
+/* Signals (Invisible by default, triggered by classes) */
+.signal-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0;
+  transition: opacity 2s ease-in-out, transform 3s ease-out;
+}
+
+.red-north {
+  top: -20vh; left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  width: 80vw; height: 60vh;
+  background: radial-gradient(circle, rgba(160, 20, 20, 0.35) 0%, transparent 60%);
+}
+
+.green-all {
+  bottom: -30vh; left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  width: 120vw; height: 70vh;
+  background: radial-gradient(circle, rgba(20, 100, 40, 0.25) 0%, transparent 60%);
+}
+
+/* Dragon Threat */
+.dragon-shadow {
+  position: absolute;
+  bottom: -60vh; left: 50%;
+  transform: translateX(-50%);
+  width: 140vw; height: 120vh;
+  background: radial-gradient(ellipse at bottom, rgba(5,5,8,0.95) 20%, transparent 70%);
+  opacity: 0;
+  transition: all 3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Sabotage Flare */
+.sabotage-flare {
+  position: absolute;
+  top: 30%; left: 60%;
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, rgba(230, 160, 20, 0.5) 0%, transparent 70%);
+  filter: blur(80px);
+  opacity: 0;
+  mix-blend-mode: overlay;
+  transition: opacity 0.5s ease-out, transform 1s ease-out;
+}
+
+/* Section/Scene Architecture */
+.storybook-container {
+  position: relative;
+  z-index: 10;
+}
+
+.scene {
+  min-height: 120vh; /* Long scroll spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10vh 2rem;
+  box-sizing: border-box;
+  opacity: 1; /* Guarantees rendering */
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.scene.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scene-content {
+  max-width: 640px;
+  width: 100%;
+}
+
+.scene p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+  color: #e0d5c1;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.9);
+}
+
+.chapter-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold, #c9963b);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  line-height: 1.1;
+  margin-bottom: 4rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.8);
+}
+
+.chapter-kicker {
+  display: block;
+  font-size: 0.48em;
+  letter-spacing: 0.16em;
+  margin: 0;
+}
+
+.chapter-main {
+  display: block;
+  font-size: 0.74em;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+/* Typography Variations */
+.heavy { font-weight: bold; color: #fff; }
+.detail { font-style: italic; color: #a89f91; font-size: 1.25rem; }
+.margin-top { margin-top: 3rem; }
+
+.storybook-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 6px;
+  border: 1px solid rgba(201, 150, 59, 0.4);
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+  opacity: 0.85;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.storybook-image:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* Abstract Formation Diagram */
+.formation-abstract {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  border: 1px dashed rgba(200, 180, 140, 0.15);
+  margin: 0 auto 4rem auto;
+  position: relative;
+  animation: rotate-slow 60s linear infinite;
+  transition: all 1s ease;
+}
+
+@keyframes rotate-slow {
+  100% { transform: rotate(360deg); }
+}
+
+.point {
+  width: 6px; height: 6px;
+  background: var(--gold, #c9963b);
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 8px var(--gold, #c9963b);
+}
+
+.point-center { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; background: #fff; box-shadow: 0 0 15px #fff; }
+.point-n { top: -3px; left: 50%; transform: translateX(-50%); }
+.point-s { bottom: -3px; left: 50%; transform: translateX(-50%); }
+.point-e { top: 50%; right: -3px; transform: translateY(-50%); }
+.point-w { top: 50%; left: -3px; transform: translateY(-50%); }
+.point-ne { top: 15%; right: 15%; }
+.point-nw { top: 15%; left: 15%; }
+.point-se { bottom: 15%; right: 15%; }
+.point-sw { bottom: 15%; left: 15%; }
+
+.red-text { color: #e55a5a; font-weight: bold; }
+.green-text { color: #6dbf6d; font-weight: bold; }
+.sub-text { font-size: 1.15rem !important; opacity: 0.7; margin-top: -1.5rem; }
+
+/* Stagger Animations */
+.stagger, .stagger-fast {
+  opacity: 1; /* Guarantees rendering */
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+.stagger.in-view, .stagger-fast.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dynamic State Triggers via Body Classes */
+
+/* Scene 2: Signals Go Up */
+body.s2-active .red-north { opacity: 1; transform: translateX(-50%) scale(1); }
+body.s2-active .green-all { opacity: 1; transform: translateX(-50%) scale(1); }
+
+/* Scene 3: Disruption */
+body.s3-active .dragon-shadow {
+  opacity: 1;
+  bottom: -20vh;
+}
+body.s3-active .red-north,
+body.s3-active .green-all { opacity: 0.2; }
+body.s3-active .cinematic-bg { animation: camera-shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
+
+@keyframes camera-shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
+  40%, 60% { transform: translate3d(3px, 0, 0); }
+}
+.shatter-text { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+
+/* Scene 4: Weakness/Poisoning */
+body.s4-active .cinematic-bg { filter: blur(5px) contrast(1.1); }
+body.s4-active .formation-abstract { animation: wobble 3s infinite alternate; }
+
+@keyframes wobble {
+  0% { transform: skew(0deg, 0deg) rotate(0deg); }
+  100% { transform: skew(4deg, -2deg) rotate(5deg); filter: blur(2px); }
+}
+
+/* Scene 5: Sabotage Flare */
+.flare-warning.in-view { color: #f2b705; text-shadow: 0 0 12px rgba(242,183,5,0.6); }
+.symptom-highlight { color: #f2b705; text-shadow: 0 0 12px rgba(242,183,5,0.6); }
+body.s5-active .cinematic-bg { filter: none; }
+body.s5-active .sabotage-flare { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
+body.s5-active #scene-5 .scene-content { animation: glitch 0.3s ease-in-out; }
+
+@keyframes glitch {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(8px) skewX(2deg); filter: blur(1px); }
+  75% { transform: translateX(-8px) skewX(-2deg); filter: blur(1px); }
+}
+
+/* Scene 6: Clash */
+body.s6-active .dragon-shadow {
+  bottom: 0; width: 200vw; height: 150vh;
+  background: rgba(0,0,0,0.95);
+  z-index: 5;
+  transition: all 1s ease-out;
+}
+.dragon-strike {
+  font-family: 'Cinzel', serif; font-size: 3rem; color: #cc3333;
+  margin: 4rem 0; text-align: center; text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(200,0,0,0.6);
+}
+.final-blow { text-align: center; font-size: 1.8rem !important; }
+
+/* Scene 7: Realization */
+.black-scene { position: relative; z-index: 20; background: #000; min-height: 150vh; }
+body.s7-active .cinematic-bg { opacity: 0; }
+body.s7-active { background: #000; }
+
+.reveal-line { opacity: 0; transition: opacity 1.5s ease, transform 1.5s ease; transform: translateY(10px); }
+.reveal-line.shown { opacity: 1; transform: translateY(0); }
+.reveal-line.indent { padding-left: 3rem; color: #777; font-style: italic; border-left: 1px solid #333; margin-left: 1rem; }
+
+.verdict {
+  font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--gold, #c9963b);
+  text-align: center; margin-top: 5rem; letter-spacing: 0.05em;
+  text-shadow: 0 0 15px rgba(200,150,50,0.3);
+}
+
+.action-row { margin-top: 6rem; text-align: center; }
+.btn-story-return {
+  display: inline-block; padding: 1.2rem 2.5rem;
+  border: 1px solid var(--gold, #c9963b); color: var(--gold, #c9963b);
+  text-decoration: none; font-family: 'Cinzel', serif;
+  text-transform: uppercase; letter-spacing: 0.15em; font-size: 1.1rem;
+  transition: all 0.4s ease; background: transparent;
+}
+.btn-story-return:hover {
+  background: rgba(200,150,59,0.15); box-shadow: 0 0 20px rgba(200,150,59,0.3);
+  text-shadow: 0 0 8px rgba(200,150,59,0.5);
+}
+
+@media (max-width: 768px) {
+  .scene { padding: 5vh 1.5rem; }
+  .scene p { font-size: 1.2rem; }
+  .chapter-title { font-size: 1.95rem; }
+  .chapter-kicker { font-size: 0.45em; }
+  .chapter-main { font-size: 0.8em; }
+  .dragon-strike, .verdict { font-size: 2.2rem; }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Final Report — Detective Desk. Sealed investigative summary requiring all prior codes." />
+  <title>Final Report — Detective Desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .memoir-final-directive {
+      margin-top: 3rem;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(201,150,59,0.08), rgba(201,150,59,0.03) 45%, rgba(0,0,0,0.12) 100%);
+      border: 1px solid rgba(201,150,59,0.25);
+      border-top: 2px solid rgba(201,150,59,0.38);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.5rem;
+      box-shadow: inset 0 1px 0 rgba(240,192,96,0.14);
+    }
+
+    .memoir-final-directive-title {
+      margin: 0 0 1.25rem;
+      font-family: var(--font-title);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: 0.08em;
+      color: var(--gold-bright);
+      text-shadow: 0 0 10px rgba(240,192,96,0.24);
+    }
+
+    .memoir-final-directive-text {
+      margin: 0;
+      color: var(--parchment-dim);
+      line-height: 1.95;
+      font-size: 1.05rem;
+    }
+
+    .memoir-final-directive-text .directive-emphasis {
+      display: block;
+      margin-top: 1rem;
+      color: var(--parchment-text);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-logo" aria-label="Return to the Archive Hub">
+        <span class="logo-rune">⚔</span>
+        <span class="logo-text">RE:VERSE</span>
+        <span class="logo-rune">⚔</span>
+      </a>
+      <p class="header-tagline">The Sealed Chronicles</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Archive Navigation">
+    <a href="../index.html" id="nav-hub">Hub</a> / <span>Final Report</span>
+  </nav>
+
+  <main class="main-content">
+
+    <article class="scroll-page locked-page" aria-labelledby="page-title">
+
+      <header class="scroll-header">
+        <div class="scroll-icon pulse-red" aria-hidden="true">🔒</div>
+        <h1 id="page-title">Final Report</h1>
+        <p class="scroll-meta">&#91; Case #VT-0417 — Restricted Summary &#93;</p>
+      </header>
+
+      <!-- Locked gate UI -->
+      <div class="vault-gate" id="vault-gate">
+        <p class="vault-flavour" style="margin-bottom:1.4rem;">
+          <em style="font-size:0.85rem;color:var(--parchment-dim);">Enter the code on each of the three logs first. The report opens only when all three are correct.</em>
+        </p>
+        <div class="vault-summary">
+          Each log has its own code box at the bottom. Enter the correct code on all three pages, then return here to open the final report.
+          <ul class="vault-checklist" id="vault-checklist" aria-label="Record verification checklist"></ul>
+          <p class="vault-note" id="vault-status">This report unlocks only after all 3 log codes are entered correctly on their respective pages. 0 / 3 verified.</p>
+        </div>
+      </div>
+
+      <!-- Content revealed after all 3 codes verified -->
+      <div class="scroll-body hidden" id="report-content">
+
+        <div class="entry">
+          <h2 class="entry-date">Finding 1 — The Corrected Time</h2>
+          <p>
+            The official record states time of death as <strong>10:40 PM</strong>. It does not.
+            The examiner's own handwritten field notes — body temperature, lividity, rigor — place death
+            <em>60 to 90 minutes before examination at 12:10 AM</em>. Cross-referenced against the
+            dispatch call logged at <strong>11:50 PM</strong>, the only time that satisfies both is
+            <strong>11:40 PM</strong>. The typed hour was changed after the notes were taken.
+            Whoever's alibi only covers 10:40 PM is not actually cleared.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h2 class="entry-date">Finding 2 — The Weapon</h2>
+          <p>
+            The crystal compass recovered at the scene was not a joke gift from Rohan Mehta.
+            Recovered purchase records place its acquisition <strong>six years ago</strong> — the week
+            Veyra Technologies was founded. It was a founding gift, from a founding partner.
+            The archive thread misattributed its origin. That misattribution was never corrected.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h2 class="entry-date">Finding 3 — The Motive</h2>
+          <p>
+            One word surfaced across the interrogation transcripts, spoken almost in passing, attributed
+            to no one directly: <strong>erased</strong>. Veyra Technologies was built by two people.
+            Vision Night — the company's public founding milestone, broadcast to every investor and
+            partner who mattered — credited only one name. The other half of "built this company together"
+            was about to be written out of the story permanently, in front of everyone.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h2 class="entry-date">Finding 4 — Cross-Reference</h2>
+          <p>
+            Only one alibi in the record covers <strong>10:40 PM</strong> and falls apart at
+            <strong>11:40 PM</strong>. A vendor call ending "almost eleven" covers the forged window —
+            not the real one. Only one person has a six-year history with the compass. Only one person
+            described themselves as the other half of the company's founding unprompted, in a room full
+            of people being questioned about a murder.
+          </p>
+          <p style="margin-top:1rem;font-style:italic;color:var(--parchment-dim);">
+            The report was never wrong about the weapon. It was wrong about the hour.
+            And that hour was the only thing protecting her.
+          </p>
+        </div>
+
+        <div class="entry memoir-final-directive" aria-label="Final directive">
+          <h2 class="memoir-final-directive-title">Name Her</h2>
+          <p class="memoir-final-directive-text">
+            The weapon has a name.<br />
+            The hour has a name.<br />
+            The killer has initials.<br /><br />
+            The report was forged to hide one hour.<br />
+            That hour was the only alibi she had.<br /><br />
+            Submit your conclusion in the format that names all three.<br /><br />
+            <span class="directive-emphasis">
+              WEAPON — REAL TIME — INITIALS<br />
+              (No spaces. Hyphens only.)
+            </span>
+          </p>
+        </div>
+
+        <!-- Final code panel -->
+        <div class="record-code-panel" data-record-key="herosmemoir">
+
+          <h2 class="record-code-title">Final Report Code</h2>
+
+          <p class="record-code-note">
+            Enter the final code to close the case. One answer. Three parts.
+          </p>
+
+          <div class="puzzle-clue" style="margin: 1.5rem 0; padding: 1.5rem; text-align: center; border: 1px solid rgba(201, 150, 59, 0.4); background: rgba(0, 0, 0, 0.4); border-radius: 6px; box-shadow: inset 0 0 10px rgba(201, 150, 59, 0.05);">
+            <p style="color: var(--parchment); font-family: var(--font-body); font-style: italic; font-size: 1.1rem; line-height: 1.8; margin-bottom: 0;">
+              The weapon that was always there.<br />
+              The hour that was hidden.<br />
+              The initials of the one who forged the hour to save herself.
+              <strong style="color: var(--parchment); font-family: var(--font-title); font-size: 1.1rem; letter-spacing: 0.1em; font-style: normal; display: block; margin-top: 0.5rem;">
+                What is the final code?
+              </strong>
+            </p>
+          </div>
+
+          <form class="record-code-form" autocomplete="off">
+            <label for="record-code-herosmemoir" class="record-code-label">
+              Final code (WEAPON-REALTIME-INITIALS)
+            </label>
+            <div class="record-code-row">
+              <input
+                type="text"
+                id="record-code-herosMemoir"
+                class="record-code-input"
+                inputmode="text"
+                maxlength="14"
+                aria-describedby="record-code-herosMemoir-feedback" />
+              <button type="submit" class="btn-action-primary record-code-submit">Verify</button>
+            </div>
+            <p class="record-code-feedback" id="record-code-herosMemoir-feedback" aria-live="polite"></p>
+          </form>
+
+        </div>
+
+        <nav class="scroll-nav" aria-label="Page navigation">
+          <a href="../Interrogation/interrogation.html" class="btn-nav">← Log 3</a>
+        </nav>
+
+      </div>
+
+    </article>
+
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
