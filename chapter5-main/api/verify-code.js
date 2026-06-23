@@ -4,8 +4,8 @@ function normalizeCode(value) {
 
 function getExpectedCodes() {
   return {
-    forensic:    normalizeCode(process.env.RV_CODE_FORENSIC),
-    instagram:   normalizeCode(process.env.RV_CODE_INSTAGRAM),
+    forensic:    normalizeCode(process.env.RV_CODE_HEALER),
+    instagram:   normalizeCode(process.env.RV_CODE_SCOUT),
     alliance:    normalizeCode(process.env.RV_CODE_ALLIANCE),
     herosMemoir: normalizeCode(process.env.RV_CODE_HEROSMEMOIR),
   };

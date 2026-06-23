@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RE:VERSE" />
-  <title>The Archive Hub — RE:VERSE</title>
+  <meta name="description" content="Detective Desk — The Midnight Murder" />
+  <title>The Archive Hub — Detective Desk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
@@ -12,13 +12,11 @@
 </head>
 <body>
 
-  <!-- Ambient particles -->
   <div class="particles" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span>
   </div>
 
-  <!-- Top banner -->
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="site-logo" aria-label="Return to the Archive Hub">
@@ -30,25 +28,23 @@
     </div>
   </header>
 
-  <!-- Breadcrumb nav -->
   <nav class="breadcrumb" aria-label="Archive Navigation">
     <a href="index.html" id="nav-hub">Hub</a>
   </nav>
 
-  <!-- Page content -->
   <main class="main-content">
 
     <section class="hub-hero">
       <div class="scroll-ornament top" aria-hidden="true">
         ✦ ─────────────────────────── ✦ ─────────────────────────── ✦
       </div>
-      <h1 class="hub-title">The Archive of RE:VERSE</h1>
+      <h1 class="hub-title">Case #VT-0417 — The Midnight Murder</h1>
       <p class="hub-subtitle">
-        Four records. One hidden truth. Seek what was buried.<br />
-        <em>The seal will break only for those who look beyond the words.</em>
+        Three logs. One forged record. One name that never appears — until the end.<br />
+        <em>The seal breaks only for those who read what the hour was hiding.</em>
       </p>
       <p class="hub-subtitle" style="margin-top:0.6rem;">
-        No single record tells the full story.
+        No single log tells the full story. Read them in order.
       </p>
       <div style="margin-top: 2rem; margin-bottom: 0.5rem;">
         <a href="../Storybook/storybook.html" class="btn-action-primary">✦ Return to Storybook ✦</a>
@@ -60,7 +56,7 @@
       <!-- Progress bar -->
       <div class="hub-progress">
         <div class="progress-track"><div id="progress-fill"></div></div>
-        <span id="progress-label">0 / 5 records reviewed</span>
+        <span id="progress-label">0 / 4 records reviewed</span>
       </div>
 
       <!-- Hint toggle -->
@@ -69,11 +65,11 @@
         <div id="hint-panel" role="region" aria-label="Archive guidance">
           <strong>How to investigate:</strong>
           <ul>
-            <li>Read all four open archive records carefully.</li>
-            <li>Look for anything that doesn't quite line up — times, locations, names.</li>
-            <li>Each open record has its own code box at the bottom. Hero’s Memoir opens only after all four codes are entered correctly on their respective pages.</li>
-            <li>Cross-reference entries across multiple pages before drawing conclusions.</li>
-            <li>No single record is sufficient on its own.</li>
+            <li>Read all three logs carefully — in order. Log 1 changes how you read everything after it.</li>
+            <li>Look for anything that doesn't line up — times, alibis, objects, and what people say unprompted.</li>
+            <li>Each log has a code box at the bottom. The Final Report unlocks only after all three codes are verified.</li>
+            <li>Cross-reference entries across logs before drawing conclusions.</li>
+            <li>No single log is sufficient on its own.</li>
           </ul>
         </div>
       </div>
@@ -82,34 +78,34 @@
     <section class="hub-grid" aria-label="Archive Documents">
 
       <a href="ScoutLogs/scout-logs.html" class="archive-card" id="card-scout">
-        <div class="card-icon" aria-hidden="true">🗺️</div>
-        <div class="card-label">Scout Logs</div>
-        <div class="card-tag">Field Reports</div>
-        <p class="card-desc">Movement records from the outer perimeter. Times, positions, and the question of who arrived when.</p>
-        <span class="card-cta">Open Record →</span>
+        <div class="card-icon" aria-hidden="true">🔬</div>
+        <div class="card-label">Log 1 — Forensic Report</div>
+        <div class="card-tag">Case File #VT-0417</div>
+        <p class="card-desc">The official post-mortem examination. The typed record and the examiner's own hand do not agree. Start here.</p>
+        <span class="card-cta">Open Log →</span>
       </a>
 
       <a href="HealerRecords/healer-records.html" class="archive-card" id="card-healer">
-        <div class="card-icon" aria-hidden="true">🌿</div>
-        <div class="card-label">Healer Records</div>
-        <div class="card-tag">Medical Scrolls</div>
-        <p class="card-desc">Treatment logs, supply tallies, and a name that does not appear where it should.</p>
-        <span class="card-cta">Open Record →</span>
+        <div class="card-icon" aria-hidden="true">📱</div>
+        <div class="card-label">Log 2 — Instagram Archive</div>
+        <div class="card-tag">Archived Social Media</div>
+        <p class="card-desc">Posts, replies, and a deleted story from the night of the murder. The weapon is here. The killer is not.</p>
+        <span class="card-cta">Open Log →</span>
       </a>
 
       <a href="AllianceDocs/alliance-docs.html" class="archive-card" id="card-alliance">
-        <div class="card-icon" aria-hidden="true">🤝</div>
-        <div class="card-label">Alliance Documents</div>
-        <div class="card-tag">Diplomatic Papers</div>
-        <p class="card-desc">The ratified pact, the witness roster, and an unsigned note pointing in the wrong direction.</p>
-        <span class="card-cta">Open Record →</span>
+        <div class="card-icon" aria-hidden="true">🗣️</div>
+        <div class="card-label">Log 3 — Interrogation Log</div>
+        <div class="card-tag">Recorded Statements</div>
+        <p class="card-desc">Four persons of interest. Three read defensive. One word surfaces only once — and names everything.</p>
+        <span class="card-cta">Open Log →</span>
       </a>
 
-     
       <a href="HerosMemoir/HerosMemoir.html" class="archive-card locked-card" id="card-hidden">
         <div class="card-icon" aria-hidden="true">🔒</div>
-        <div class="card-label">Hero’s Memoir</div>
-        <p class="card-desc">A compiled summary of inconsistencies, placed under council seal. All four page codes must be verified before entry.</p>
+        <div class="card-label">Final Report</div>
+        <div class="card-tag">Restricted — Case #VT-0417</div>
+        <p class="card-desc">The compiled truth behind the forged record. Unlocks only after all three log codes are verified.</p>
         <span class="card-cta">Attempt Entry →</span>
       </a>
 
