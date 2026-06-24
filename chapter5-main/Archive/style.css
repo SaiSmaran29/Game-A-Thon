@@ -10,6 +10,20 @@
 /* ── Google Fonts ── */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap');
 
+/* ── Disable text selection / copying (typing still allowed in fields) ── */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input, textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 /* ── Custom properties ── */
 :root {
   --bg-deep:       #0d0b08;
