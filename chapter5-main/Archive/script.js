@@ -206,8 +206,8 @@ function unlockVault(animate) {
 
 // ── Track visited pages for hub progress ─────────────────────────────────
 const PAGE_KEYS = {
-  "forensic-report.html":  "rv_v_forensic",
-  "instagram.html":        "rv_v_instagram",
+  "scout-logs.html":       "rv_v_forensic",
+  "healer-records.html":   "rv_v_instagram",
   "alliance-docs.html":    "rv_v_alliance",
   "HerosMemoir.html":      "rv_v_hidden",
 };
@@ -224,8 +224,8 @@ function markVisitedCards() {
   if (!grid) return;
 
   const map = {
-    "card-forensic":   "rv_v_forensic",
-    "card-instagram":  "rv_v_instagram",
+    "card-scout":      "rv_v_forensic",
+    "card-healer":     "rv_v_instagram",
     "card-alliance":   "rv_v_alliance",
     "card-hidden":     "rv_v_hidden",
   };
