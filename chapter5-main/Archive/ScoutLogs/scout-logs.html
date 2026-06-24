@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Libre+Baskerville:ital@0;1&family=Special+Elite&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
 </head>
@@ -55,20 +55,19 @@
         <style>
           .scout-log-card {
             position: relative;
-            background-color: #d1bfae;
+            background-color: #1a1c22;
             background-image:
-              url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.12"/></svg>'),
-              radial-gradient(ellipse at center, rgba(230, 210, 180, 0.2) 0%, rgba(120, 90, 50, 0.6) 100%),
-              linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
-            border: none;
+              url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23n)" opacity="0.04"/></svg>'),
+              linear-gradient(160deg, #1c1e25 0%, #131419 100%);
+            border: 1px solid rgba(180, 138, 78, 0.22);
+            border-left: 3px solid rgba(180, 138, 78, 0.55);
             box-shadow:
-              inset 0 0 40px rgba(70, 40, 15, 0.8),
-              inset 0 0 10px rgba(50, 25, 5, 0.6),
-              0 10px 20px rgba(0, 0, 0, 0.6);
-            border-radius: 3px;
+              0 10px 24px rgba(0, 0, 0, 0.55),
+              inset 0 1px 0 rgba(201, 150, 59, 0.08);
+            border-radius: 4px;
             padding: 2.2rem 2.5rem;
             margin-bottom: 2.5rem;
-            color: #2c1e16;
+            color: #cdcabf;
             overflow: hidden;
             font-family: var(--font-body);
             text-shadow: none;
@@ -81,35 +80,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            box-shadow:
-              inset 0 0 20px 8px rgba(60, 30, 10, 0.4),
-              inset 0 0 60px rgba(30, 15, 0, 0.3);
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.45);
             pointer-events: none;
-            border-radius: 3px;
-            mix-blend-mode: multiply;
-            z-index: 10;
+            border-radius: 4px;
+            z-index: 1;
           }
 
           .scout-log-card h2.entry-date {
-            font-family: var(--font-body);
-            font-weight: bold;
-            color: #1a110a;
+            font-family: var(--font-title);
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--gold-bright);
             text-shadow: none;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 0.6rem;
             text-align: center;
             position: relative;
             z-index: 2;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.12em;
           }
 
           .scout-log-card > p:nth-of-type(1) {
             text-align: center;
             font-size: 1rem;
-            color: #3b2a1c;
+            color: var(--parchment-dim);
             letter-spacing: 0.05em;
             margin-bottom: 1.8rem;
-            border-bottom: 1px solid rgba(80, 50, 20, 0.2);
+            border-bottom: 1px solid rgba(201, 150, 59, 0.18);
             padding-bottom: 1rem;
             position: relative;
             z-index: 2;
@@ -117,13 +114,13 @@
 
           .scout-log-card p {
             position: relative;
-            padding-left: 2.2rem;
+            padding-left: 1.4rem;
             margin-bottom: 1.2rem;
             padding-bottom: 1.2rem;
-            border-bottom: 1px solid rgba(80, 50, 20, 0.15);
+            border-bottom: 1px solid rgba(201, 150, 59, 0.1);
             line-height: 1.7;
             z-index: 2;
-            color: #2c1e16;
+            color: var(--parchment-dim);
             text-shadow: none;
           }
 
@@ -134,48 +131,48 @@
           }
 
           .scout-log-card p strong {
-            font-family: var(--font-body);
+            font-family: var(--font-rune);
             font-weight: bold;
-            color: #1a110a;
+            color: var(--parchment);
             display: inline-block;
             margin-bottom: 0.25rem;
-            letter-spacing: 0;
-            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+            font-size: 1.02rem;
             text-shadow: none;
           }
 
           .scout-log-card p::before {
             position: absolute;
             left: 0.2rem;
-            top: 0.2rem;
-            font-size: 1.1rem;
-            color: rgba(60, 40, 20, 0.7);
+            top: 0.55rem;
+            font-size: 0.9rem;
+            color: rgba(201, 150, 59, 0.6);
             text-shadow: none;
             font-family: 'Segoe UI Symbol', serif;
           }
 
-          .scout-log-card p:nth-of-type(2)::before { content: '⚑'; font-size: 1.2rem; top: 0.15rem; }
-          .scout-log-card p:nth-of-type(3)::before { content: '◈'; font-size: 1.3rem; left: 0.1rem; }
-          .scout-log-card p:nth-of-type(4)::before { content: '⚔'; font-size: 1.2rem; top: 0.15rem; }
-          .scout-log-card p:nth-of-type(5)::before { content: '↶'; font-size: 1.4rem; top: 0rem; }
-          .scout-log-card p:nth-of-type(6)::before { content: '✎'; font-size: 1.3rem; top: 0rem; left: 0.1rem; }
+          .scout-log-card p:nth-of-type(2)::before { content: '\25AA'; }
+          .scout-log-card p:nth-of-type(3)::before { content: '\25AA'; }
+          .scout-log-card p:nth-of-type(4)::before { content: '\25AA'; }
+          .scout-log-card p:nth-of-type(5)::before { content: '\25AA'; }
+          .scout-log-card p:nth-of-type(6)::before { content: '\25AA'; }
 
           .handwritten-note {
-            font-family: 'IM Fell English', serif;
+            font-family: var(--font-rune);
             font-style: italic;
-            font-size: 1.05rem;
-            color: #1a110a !important;
+            font-size: 1.02rem;
+            color: var(--parchment) !important;
             line-height: 1.9;
-            border-top: 1px dashed rgba(80,50,20,0.3) !important;
+            border-top: 1px dashed rgba(201,150,59,0.3) !important;
             margin-top: 0.5rem !important;
             padding-top: 1rem !important;
           }
 
           .stamp-official {
             display: inline-block;
-            border: 2px solid rgba(120,40,20,0.6);
-            color: rgba(120,40,20,0.8);
-            font-family: var(--font-body);
+            border: 2px solid rgba(210,59,59,0.55);
+            color: rgba(210,90,90,0.85);
+            font-family: var(--font-title);
             font-weight: bold;
             font-size: 0.75rem;
             letter-spacing: 0.12em;
