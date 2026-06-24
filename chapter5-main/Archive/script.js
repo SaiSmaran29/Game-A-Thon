@@ -37,10 +37,10 @@ const RECORD_KEYS = ["forensic", "instagram", "alliance", "herosMemoir"];
 // Google Form link shown once a log's code is verified.
 // Paste each form URL between the quotes; leave "" to hide the link for that log.
 const RECORD_FORM_LINKS = {
-  forensic:    "",
-  instagram:   "",
-  alliance:    "",
-  herosMemoir: "",
+  forensic:    "https://docs.google.com/forms/d/e/1FAIpQLSfsXo2vgXZttnMXD75r0XoeOE-vydjrsnPk0_ly15w7cZ1OxQ/viewform?usp=sharing&ouid=115715606325516633822",
+  instagram:   "https://docs.google.com/forms/d/e/1FAIpQLSeyFrSD0amV3xig9dTMc1nRjsIIn7nQA5AmdJ-ivv1Bf-_GtQ/viewform?usp=dialog",
+  alliance:    "https://docs.google.com/forms/d/e/1FAIpQLSc_EZtCujh58LvydOR_JounKFUdemI1g0iQkIOLwqCqsvlcLA/viewform?usp=sharing&ouid=115715606325516633822",
+  herosMemoir: "https://docs.google.com/forms/d/e/1FAIpQLSe15poq_0Y6jkuxhzPvEEVi6JRUGRh172KHLOcRThKlE3YIyQ/viewform?usp=sharing&ouid=115715606325516633822",
 };
 
 function showRecordFormLink(form, key) {
