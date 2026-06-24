@@ -377,6 +377,23 @@ p:last-child { margin-bottom: 0; }
 .record-code-panel.verified .record-code-feedback {
   color: #8ad08f;
 }
+.record-code-formlink {
+  display: inline-block;
+  margin-top: 0.9rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  color: var(--gold);
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.record-code-formlink:hover {
+  background: rgba(201, 150, 59, 0.12);
+  box-shadow: var(--glow-gold);
+}
 
 /* ── Image Placeholder ── */
 .image-placeholder { border:2px solid #8b6914; background:linear-gradient(135deg, #e8d5a0 0%, #d4bc80 60%, #c9ae6a 100%); padding:24px 20px; margin:28px 0; text-align:center; border-radius:var(--radius-md); box-shadow:0 4px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.3); position:relative; overflow:hidden; }

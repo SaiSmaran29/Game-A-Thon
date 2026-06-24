@@ -34,6 +34,34 @@ function initParticles() {
 
 const RECORD_KEYS = ["forensic", "instagram", "alliance", "herosMemoir"];
 
+// Google Form link shown once a log's code is verified.
+// Paste each form URL between the quotes; leave "" to hide the link for that log.
+const RECORD_FORM_LINKS = {
+  forensic:    "",
+  instagram:   "",
+  alliance:    "",
+  herosMemoir: "",
+};
+
+function showRecordFormLink(form, key) {
+  if (!form) return;
+  const url = RECORD_FORM_LINKS[key];
+  if (!url) return;
+
+  let link = form.querySelector(".record-code-formlink");
+  if (!link) {
+    link = document.createElement("a");
+    link.className = "record-code-formlink";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    form.appendChild(link);
+  }
+  link.href = url;
+  link.textContent = key === "herosMemoir"
+    ? "Open the final form →"
+    : "Open the form for this log →";
+}
+
 function normalizeCode(value) {
   return value.trim().toLowerCase();
 }
@@ -118,6 +146,7 @@ function initRecordCodes() {
           ? "Case closed."
           : "Code verified.";
       }
+      showRecordFormLink(form, key);
     }
 
     form.addEventListener("submit", async function (e) {
@@ -154,9 +183,11 @@ function initRecordCodes() {
         if (key === "herosMemoir") {
           input.value = "Verified";
           feedback.textContent = "Case closed.";
+          showRecordFormLink(form, key);
         } else {
           input.value = "Verified";
           feedback.textContent = "Code verified. This log now counts toward the Final Report.";
+          showRecordFormLink(form, key);
           refreshVaultStatus();
 
           if (areAllRecordCodesVerified()) {
