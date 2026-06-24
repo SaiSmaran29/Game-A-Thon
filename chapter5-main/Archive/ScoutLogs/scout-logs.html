@@ -30,7 +30,7 @@
         <span class="logo-text">Detective Desk</span>
         <span class="logo-rune">🔍</span>
       </a>
-      <p class="header-tagline">The Midnight Murder</p>
+      <p class="header-tagline">A Modern Mystery</p>
     </div>
   </header>
 
@@ -237,7 +237,7 @@
               <div class="card-label" style="text-align: center;">[Note A]</div>
               <div style="text-align: center; color: var(--gold-bright); font-size: 0.9rem; font-family: var(--font-title); margin-top: 0.3rem; letter-spacing: 0.05em;">Body Temperature</div>
               <div class="card-desc" style="margin-top: 0.6rem; color: var(--parchment); text-align: center; font-style: italic;">
-                33.4°C recorded at examination<br />(12:10 AM)
+                33.4°C recorded at examination<br />(12:40 AM)
               </div>
             </div>
 
@@ -255,7 +255,7 @@
               <div class="card-label" style="text-align: center;">[Note C]</div>
               <div style="text-align: center; color: var(--gold-bright); font-size: 0.9rem; font-family: var(--font-title); margin-top: 0.3rem; letter-spacing: 0.05em;">Rigor Mortis</div>
               <div class="card-desc" style="margin-top: 0.6rem; color: var(--parchment); text-align: center; font-style: italic;">
-                Early onset only<br />Jaw and neck — consistent with 60–90 min post-death
+                Early onset only<br />Jaw and neck — consistent with 60 min post-death
               </div>
             </div>
 
@@ -264,38 +264,10 @@
               <div class="card-label" style="text-align: center;">[Note D]</div>
               <div style="text-align: center; color: var(--gold-bright); font-size: 0.9rem; font-family: var(--font-title); margin-top: 0.3rem; letter-spacing: 0.05em;">Examiner's Remark</div>
               <div class="card-desc" style="margin-top: 0.6rem; color: var(--parchment); text-align: center; font-style: italic;">
-                "Findings consistent with death approx. 60–90 minutes prior to examination — cross-check against stated TOD."
+                "Findings consistent with death approx. 60 minutes prior to examination — cross-check against stated TOD."
               </div>
-              <button type="button" class="btn-action-primary"
-                onclick="document.getElementById('note-d-detail').classList.remove('hidden');"
-                style="margin-top: auto; padding: 0.4rem 0.8rem; font-size: 0.75rem; background-color: #2c1e16 !important; color: #d1bfae !important; border: 1px solid #1a110a !important; text-shadow: none !important; box-shadow: inset 0 0 5px rgba(0,0,0,0.8) !important;">Cross-Reference →</button>
             </div>
 
-          </div>
-
-          <!-- Modal: cross-reference breakdown -->
-          <div id="note-d-detail" class="hidden"
-            style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 9999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
-            <div class="scroll-quote"
-              style="position: relative; background: var(--bg-card); border: 1px solid rgba(201,150,59,0.35); padding: 2rem 2.5rem; max-width: 460px; width: 90%; box-shadow: 0 0 40px rgba(0,0,0,0.9); margin: 0; border-left: none; border-radius: var(--radius-md);">
-              <button onclick="document.getElementById('note-d-detail').classList.add('hidden')"
-                style="position: absolute; top: 12px; right: 16px; background: none; border: none; color: var(--gold-dim); font-size: 1.5rem; cursor: pointer; transition: color 0.2s;"
-                onmouseover="this.style.color='var(--gold-bright)'"
-                onmouseout="this.style.color='var(--gold-dim)'">&times;</button>
-              <h3 style="font-size: 1.1rem; color: var(--gold-bright); font-family: var(--font-title); margin-bottom: 1rem; letter-spacing: 0.1em;">CROSS-REFERENCE — TOD CALCULATION</h3>
-              <p style="color: var(--parchment);">
-                Examination conducted: <strong style="color: var(--gold-bright);">12:10 AM</strong><br />
-                Physical findings: death 60–90 min prior<br />
-                → Places real TOD between <strong style="color: var(--gold-bright);">10:40 PM – 11:10 PM</strong>
-              </p>
-              <p style="margin-top: 1.2rem; border-top: 1px dotted var(--gold-dim); padding-top: 1.2rem; color: var(--parchment-dim);">
-                <strong>Note:</strong><br />
-                The dispatch log records Rohan Mehta's call at <strong style="color: var(--gold-bright);">11:50 PM</strong> — placed almost immediately after he found the body.<br /><br />
-                If the body was found at 11:50 PM, and the examiner's own physical data places death 60–90 minutes before 12:10 AM — the only time that satisfies <em>both</em> constraints is <strong style="color: var(--gold-bright);">11:40 PM</strong>.<br /><br />
-                The official typed record reads <strong style="color: rgba(192,57,43,0.9);">10:40 PM</strong>.<br />
-                Something was changed after the notes were taken.
-              </p>
-            </div>
           </div>
 
           <hr style="border: none; border-top: 1px dashed rgba(201,150,59,0.15); margin: 1.5rem 0;" />
@@ -359,7 +331,7 @@
             <div class="evidence-component" style="position: absolute; bottom: 8%; left: 4%; max-width: 210px; padding: 0.5rem 0.6rem; border: 1px dashed rgba(192,57,43,0.5); background: rgba(0,0,0,0.6); border-left: 2px solid rgba(192,57,43,0.8); border-radius: var(--radius-sm); z-index: 10; font-family: var(--font-body); font-size: 0.7rem; color: var(--parchment-dim); line-height: 1.4; text-transform: none; letter-spacing: 0;">
               <strong style="color: var(--crimson-light); font-family: var(--font-title); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; display: block; line-height: 1.2; margin-bottom: 0.2rem;">[DISCREPANCY]</strong>
               Official TOD typed: <span style="color: rgba(192,57,43,0.9); font-weight: bold;">10:40 PM</span><br />
-              Field data calculates: <span style="color: var(--gold-bright); font-weight: bold;">11:40 PM</span>
+              Field data: death ~60 min before the 12:40 AM exam
             </div>
 
             <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" aria-hidden="true">
