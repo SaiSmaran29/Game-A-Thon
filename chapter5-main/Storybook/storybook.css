@@ -1,4 +1,5 @@
-/* Cinematic Storybook Style — Chapter 5 */
+/* Cinematic Storybook Style — Chapter 5 (Detective Noir) */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Libre+Baskerville:ital@0;1&family=Special+Elite&display=swap');
 
 /* Disable text selection / copying (typing still allowed in fields) */
 body {
@@ -19,8 +20,8 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #0b0c10;
-  color: var(--parchment-text, #c4b5a2);
-  font-family: 'IM Fell English', serif;
+  color: var(--parchment-text, #cdcabf);
+  font-family: 'Libre Baskerville', Georgia, serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -107,15 +108,15 @@ html, body {
 }
 
 .scene {
-  min-height: 120vh; /* Long scroll spacing */
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10vh 2rem;
+  padding: 8vh 2rem;
   box-sizing: border-box;
   opacity: 1; /* Guarantees rendering */
-  transform: translateY(40px);
-  transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .scene.is-visible {
@@ -137,7 +138,8 @@ html, body {
 }
 
 .chapter-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
   font-size: 3rem;
   color: var(--gold, #c9963b);
   text-align: center;
@@ -228,8 +230,8 @@ html, body {
 /* Stagger Animations */
 .stagger, .stagger-fast {
   opacity: 1; /* Guarantees rendering */
-  transform: translateY(20px);
-  transition: all 1s ease-out;
+  transform: translateY(14px);
+  transition: transform 0.45s ease-out;
 }
 .stagger.in-view, .stagger-fast.in-view {
   opacity: 1;
@@ -289,23 +291,23 @@ body.s6-active .dragon-shadow {
   transition: all 1s ease-out;
 }
 .dragon-strike {
-  font-family: 'Cinzel', serif; font-size: 3rem; color: #cc3333;
+  font-family: 'Oswald', sans-serif; font-size: 3rem; color: #cc3333;
   margin: 4rem 0; text-align: center; text-transform: uppercase;
   text-shadow: 0 0 20px rgba(200,0,0,0.6);
 }
 .final-blow { text-align: center; font-size: 1.8rem !important; }
 
 /* Scene 7: Realization */
-.black-scene { position: relative; z-index: 20; background: #000; min-height: 150vh; }
+.black-scene { position: relative; z-index: 20; background: #000; min-height: 100vh; }
 body.s7-active .cinematic-bg { opacity: 0; }
 body.s7-active { background: #000; }
 
-.reveal-line { opacity: 0; transition: opacity 1.5s ease, transform 1.5s ease; transform: translateY(10px); }
+.reveal-line { opacity: 0; transition: opacity 0.4s ease, transform 0.4s ease; transform: translateY(8px); }
 .reveal-line.shown { opacity: 1; transform: translateY(0); }
 .reveal-line.indent { padding-left: 3rem; color: #777; font-style: italic; border-left: 1px solid #333; margin-left: 1rem; }
 
 .verdict {
-  font-family: 'Cinzel', serif; font-size: 3.5rem; color: var(--gold, #c9963b);
+  font-family: 'Oswald', sans-serif; font-size: 3.5rem; color: var(--gold, #c9963b);
   text-align: center; margin-top: 5rem; letter-spacing: 0.05em;
   text-shadow: 0 0 15px rgba(200,150,50,0.3);
 }
@@ -314,7 +316,7 @@ body.s7-active { background: #000; }
 .btn-story-return {
   display: inline-block; padding: 1.2rem 2.5rem;
   border: 1px solid var(--gold, #c9963b); color: var(--gold, #c9963b);
-  text-decoration: none; font-family: 'Cinzel', serif;
+  text-decoration: none; font-family: 'Oswald', sans-serif;
   text-transform: uppercase; letter-spacing: 0.15em; font-size: 1.1rem;
   transition: all 0.4s ease; background: transparent;
 }
