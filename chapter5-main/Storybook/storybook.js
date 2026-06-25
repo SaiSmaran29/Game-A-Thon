@@ -75,18 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function triggerFinalRealization(scene) {
   const lines = scene.querySelectorAll('.reveal-line');
   lines.forEach((line, index) => {
-    // Faster cadence for the final reveal so it lands with more momentum.
-    let delay = index * 650;
-    
-    // Extra dramatic pause before the final verdict
-    if (line.classList.contains('verdict')) {
-      delay += 900; 
-    }
-    // Action button appears after the verdict is fully digested
-    if (line.classList.contains('action-row')) {
-      delay += 1400;
-    }
-
+    // Quick, even stagger so the final scene lands promptly on scroll
+    // instead of dragging out over several seconds.
+    const delay = index * 90;
     setTimeout(() => {
       line.classList.add('shown');
     }, delay);

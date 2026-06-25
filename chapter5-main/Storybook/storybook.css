@@ -107,15 +107,15 @@ html, body {
 }
 
 .scene {
-  min-height: 120vh; /* Long scroll spacing */
+  min-height: 90vh; /* Tighter scroll spacing so the next scene arrives sooner */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10vh 2rem;
+  padding: 8vh 2rem;
   box-sizing: border-box;
   opacity: 1; /* Guarantees rendering */
-  transform: translateY(40px);
-  transition: opacity 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .scene.is-visible {
@@ -228,8 +228,8 @@ html, body {
 /* Stagger Animations */
 .stagger, .stagger-fast {
   opacity: 1; /* Guarantees rendering */
-  transform: translateY(20px);
-  transition: all 1s ease-out;
+  transform: translateY(14px);
+  transition: transform 0.45s ease-out;
 }
 .stagger.in-view, .stagger-fast.in-view {
   opacity: 1;
@@ -296,11 +296,11 @@ body.s6-active .dragon-shadow {
 .final-blow { text-align: center; font-size: 1.8rem !important; }
 
 /* Scene 7: Realization */
-.black-scene { position: relative; z-index: 20; background: #000; min-height: 150vh; }
+.black-scene { position: relative; z-index: 20; background: #000; min-height: 100vh; }
 body.s7-active .cinematic-bg { opacity: 0; }
 body.s7-active { background: #000; }
 
-.reveal-line { opacity: 0; transition: opacity 1.5s ease, transform 1.5s ease; transform: translateY(10px); }
+.reveal-line { opacity: 0; transition: opacity 0.4s ease, transform 0.4s ease; transform: translateY(8px); }
 .reveal-line.shown { opacity: 1; transform: translateY(0); }
 .reveal-line.indent { padding-left: 3rem; color: #777; font-style: italic; border-left: 1px solid #333; margin-left: 1rem; }
 
