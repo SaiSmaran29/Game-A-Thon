@@ -113,14 +113,13 @@ html, body {
   justify-content: center;
   padding: 8vh 2rem;
   box-sizing: border-box;
-  opacity: 1; /* Guarantees rendering */
-  transform: translateY(24px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  opacity: 1; /* Static: fully visible, no scroll reveal */
+  transform: none;
 }
 
 .scene.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .scene-content {
@@ -163,6 +162,7 @@ html, body {
   font-size: 0.74em;
   white-space: nowrap;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 /* Typography Variations */
@@ -225,15 +225,14 @@ html, body {
 .green-text { color: #6dbf6d; font-weight: bold; }
 .sub-text { font-size: 1.15rem !important; opacity: 0.7; margin-top: -1.5rem; }
 
-/* Stagger Animations */
+/* Stagger Animations — disabled: content is static, no scroll reveal */
 .stagger, .stagger-fast {
-  opacity: 1; /* Guarantees rendering */
-  transform: translateY(14px);
-  transition: transform 0.45s ease-out;
+  opacity: 1;
+  transform: none;
 }
 .stagger.in-view, .stagger-fast.in-view {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Dynamic State Triggers via Body Classes */
@@ -300,8 +299,8 @@ body.s6-active .dragon-shadow {
 body.s7-active .cinematic-bg { opacity: 0; }
 body.s7-active { background: #000; }
 
-.reveal-line { opacity: 0; transition: opacity 0.4s ease, transform 0.4s ease; transform: translateY(8px); }
-.reveal-line.shown { opacity: 1; transform: translateY(0); }
+.reveal-line { opacity: 1; transform: none; }
+.reveal-line.shown { opacity: 1; transform: none; }
 .reveal-line.indent { padding-left: 3rem; color: #777; font-style: italic; border-left: 1px solid #333; margin-left: 1rem; }
 
 .verdict {
@@ -324,10 +323,15 @@ body.s7-active { background: #000; }
 }
 
 @media (max-width: 768px) {
-  .scene { padding: 5vh 1.5rem; }
+  .scene { padding: 5vh 1.25rem; }
   .scene p { font-size: 1.2rem; }
-  .chapter-title { font-size: 1.95rem; }
-  .chapter-kicker { font-size: 0.45em; }
-  .chapter-main { font-size: 0.8em; }
+  .chapter-title { font-size: 1.8rem; letter-spacing: 0.04em; margin-bottom: 3rem; }
+  .chapter-kicker { font-size: 0.5em; letter-spacing: 0.12em; }
+  .chapter-main { font-size: 0.92em; white-space: normal; word-break: break-word; }
   .dragon-strike, .verdict { font-size: 2.2rem; }
+}
+
+@media (max-width: 400px) {
+  .chapter-title { font-size: 1.5rem; }
+  .chapter-main { font-size: 1em; }
 }
